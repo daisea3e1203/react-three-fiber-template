@@ -6,13 +6,13 @@ export default function Box() {
   useFrame(({ clock }) => {
     const t = clock.getElapsedTime();
 
-    mesh.current.rotation.x = t;
-    mesh.current.rotation.y = t;
+    mesh.current.rotation.x = 0.6 * t;
+    mesh.current.rotation.y = 0.6 * t;
   });
 
   return (
     <mesh ref={mesh}>
-      <boxGeometry args={[2, 2, 2]} />
+      <boxGeometry args={[1, 1, 1]} />
       <meshStandardMaterial />
     </mesh>
   );
