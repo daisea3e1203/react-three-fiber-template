@@ -21,12 +21,11 @@ export default function Scene() {
     <>
       <rectAreaLight
         ref={rl}
-        intensity={10}
+        intensity={20}
         color={0xffdddd}
         position={[2, 2, 1]}
         width={1}
         height={1}
-        on
         onUpdate={(self) => {
           self.lookAt(0, 0, 0);
         }}

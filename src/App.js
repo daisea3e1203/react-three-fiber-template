@@ -7,9 +7,13 @@ import Scene from "./components/Scene";
 RectAreaLightUniformsLib.init();
 
 function App() {
+  // Fiber's Default: outputEncoding=THREE.sRGBEncoding, toneMapping=THREE.ACESFilmicToneMapping
+  // Threejs default: THREE.LinearEncoding, THREE.NoToneMapping (linear and flat)
+  // Probably the correct ACES setup? : THREE.LinearEncoding, THREE.ACESFilmicToneMapping
+  // https://docs.pmnd.rs/react-three-fiber/api/canvas
   return (
     <div id="canvas-container">
-      <Canvas camera={{ position: [0, 0, 4.5] }}>
+      <Canvas flat linear camera={{ position: [0, 0, 4.5] }}>
         <Scene />
       </Canvas>
     </div>
